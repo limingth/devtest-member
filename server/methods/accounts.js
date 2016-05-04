@@ -6,13 +6,13 @@ Accounts.onCreateUser(function(options, user) {
 	// 1st signup user is Admin by default
 	const userNumber = Meteor.users.find({}).count();
 	if (userNumber === 1){
-		Roles.addUsersToRoles(user.user._id, ['admin']);
+		Roles.addUsersToRoles(Meteor.user._id, ['admin']);
 
 		console.log('1st signup user is Admin by default.');
 		return ("你是第一位或者唯一的注册用户，也是默认的管理员。");
 		} else {
-				if (!Roles.userIsInRole(user.user._id, ['admin', 'member'])) {
-					Roles.addUsersToRoles(user.user._id, ['user']);
+				if (!Roles.userIsInRole(Meteor.user._id, ['admin', 'member'])) {
+					Roles.addUsersToRoles(Meteor.user._id, ['user']);
 				}
 	}
   // Ensure that option or user exists
@@ -29,7 +29,7 @@ Accounts.onCreateUser(function(options, user) {
   console.log('onCreateUser: user is ');
   console.log(user);
   user.profile = {};
-  user.profile.nickname = user.username;
+  user.profile.nickname = Meteor.username;
   user.profile.country = '中国';
   user.profile.headimgurl = 'http://7xojrr.com1.z0.glb.clouddn.com/genericUser.png';
   return user;
