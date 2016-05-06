@@ -3,6 +3,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 
 import './imports/ui/body.js';
 import './imports/ui/login.js';
+import './imports/ui/users/user_profile_edit.js';
 // Template.hello.onCreated(function helloOnCreated() {
 //   // counter starts at 0
 //   this.counter = new ReactiveVar(0);
