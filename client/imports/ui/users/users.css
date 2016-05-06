@@ -1,0 +1,69 @@
+.user-table-page a:hover{
+    text-decoration: none;
+}
+.user-table{
+    width: 100%;
+    display: block;
+    padding: 0 10px 5px 10px;
+    border-bottom: solid 1px #dddddd;
+    position: relative;
+}
+.user-table-img{
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+}
+.user-table-img img{
+    width: 60px;
+    border-radius: 50%;
+    margin: 20px 10px 10px 10px;
+}
+.user-table-content{
+    width: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.admin-edit{
+    margin-left: 10px;
+}
+.user-table-content p{
+    margin: 20px 0 10px 0;
+    font-size: 22px;
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: ellipsis;
+    font-family: '华文细黑', 'Microsoft YaHei', Helvetica, Arial;
+}
+.user-table-content span{
+    display: inline-block;
+    font-size: 12px;
+    font-family: '华文细黑', 'Microsoft YaHei', Helvetica, Arial;
+}
+.user-table-content .admin-edit{
+    width: 90px;
+    padding-right: 15px;
+}
+.enroll-date{
+    display: block;
+    font-size: 12px !important;
+    margin-top: 0px !important;
+    font-family: '华文细黑', 'Microsoft YaHei', Helvetica, Arial;
+}
+.user-table-button{
+    font-size: 14px;
+}
+.user-table-button a{
+    padding: 5px;
+}
+.user-table-icon{
+    position: absolute;
+    top:40%;
+    right:20px;
+
+}
+.user-table-icon .glyphicon{
+    font-size: 18px;
+    font-weight: normal !important;
+    color: #606060;
+}

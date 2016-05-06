@@ -1,0 +1,50 @@
+<template name="userProfileEdit">
+  <div class="container">
+
+  {{#if this.profile}}
+    <div class="row user-edit">
+      <h4><b>完善个人信息</b></h4>
+      {{#autoForm collection="UserProfiles" doc=this.profile id="userForm" type="update"}}
+        <fieldset>
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='gender' firstOption="（选择性别）" options="allowed"}}
+          {{> afQuickField name='company'}}
+          {{> afQuickField name='positions'}}
+          {{> afQuickField name='birthday'}}
+          {{> afQuickField name='cellNumber'}}
+          {{> afQuickField name='email'}}
+          <!-- 添加企业logo -->
+          <!-- {{#if isInRole 'admin'}} -->
+            {{> afQuickField name='logo'}}
+          <!-- {{/if}} -->
+        </fieldset>
+        <button type="submit" class="btn btn-primary">更新</button>
+        <a class="btn btn-link" role="button" href="{{pathFor 'profile'}}">回退</a>
+      {{/autoForm}}
+    </div>
+  {{else}}
+    <div class="row user-edit">
+      <h4><b>创建个人信息</b></h4>
+      {{#autoForm collection="UserProfiles" doc=this.profile id="userForm" type="insert"}}
+        <fieldset>
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='gender' firstOption="（选择性别）" options="allowed"}}
+          {{> afQuickField name='birthday'}}
+          {{> afQuickField name='cellNumber'}}
+          {{> afQuickField name='email'}}
+          <!-- {{#if isInRole 'admin'}} -->
+            {{> afQuickField name='logo'}}
+          <!-- {{/if}} -->
+        </fieldset>
+        <button type="submit" class="btn btn-primary">保存</button>
+        <a class="btn btn-link" role="button" href="{{pathFor 'profile'}}">回退</a>
+      {{/autoForm}}
+    </div>
+  {{/if}}
+
+  </div>
+</template>
+
+<template name="myLogoPreview">
+  <img src="{{file.url}}" alt="{{file.original.name}}" width="150px;"/>
+</template>

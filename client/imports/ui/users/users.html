@@ -1,0 +1,67 @@
+<template name="userIndex">
+  <div class="user-table-page">
+    {{#if isInRole 'admin'}}
+      {{#each users}}
+        <a class="user-table container" style="overflow: auto;">
+          <div class="user-table-img ">
+            <img src="{{profile.headimgurl}}" class="">
+            <div class="user-table-button">
+              <a class="text-success" href="{{pathFor 'userProfileEdit'}}" role="button" >编辑</a>
+              <a class="text-danger delete-user" href="#" role="button" >删除</a> <br/>
+            </div>
+          </div>
+          <div class="user-table-content ">
+            <a ><p>{{profile.nickname}}</p></a>
+            <span class="">{{profile.country}} </span>
+            {{#if isAdmin}}
+            <button id="remove_admin" class=" admin-edit">已是管理员</button>
+            {{else}}
+            <a class="text-danger admin-edit set-admin" href="#" role="button"><strong>提升为管理员</strong></a>
+            {{/if}}
+            <p class="enroll-date">注册日期:{{formatDate createdAt}}</p>
+          </div>
+          <div class="user-table-icon pull-right"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
+        </a>
+        {{else}}
+        暂无用户
+      {{/each}}
+      <!--{{else}}-->
+      <!--  <div class="center container" style="text-align: center; margin-top: 80px;">-->
+      <!--    <div id="da-error-code">-->
+      <!--       <span class="glyphicon glyphicon-star-empty">sorry</span>-->
+      <!--    </div>-->
+      <!--    <h4 class="text-danger">您没有权限查看用户信息！</h4>-->
+      <!--    <p>-->
+      <!--      请联系管理员了解详细信息！-->
+      <!--    </p>-->
+      <!--  </div>-->
+    {{/if}}
+  </div>
+</template>
+<!--<template name="userIndex">-->
+<!--  <div>-->
+<!--    <div>-->
+<!--      <div class="userList" style="overflow: auto;">-->
+<!--        {{#each users}}-->
+<!--          <div class="userBoxList">-->
+<!--            <div class="userBox">-->
+<!--              <a href="{{pathFor 'userShow'}}"><img src="{{profile.headimgurl}}" class="userPhoto" height="96" width="96"></a>-->
+<!--              <a href="{{pathFor 'userShow'}}"><p class="userName">{{profile.nickname}}</p></a>-->
+<!--              <p class="userLabel">{{profile.country}} </p>-->
+<!--              <p class="userLabel">注册日期:{{formatDate createdAt}}</p>-->
+<!--              <a class="userLabel" href="{{pathFor 'userProfileEdit'}}" role="button">编辑</a>-->
+<!--              <a class="userLabel delete-user" href="#" role="button">删除</a> <br/>-->
+<!--              {{#if isAdmin}}-->
+<!--                <p class="userLabel">已是管理员</p>-->
+<!--              {{else}}-->
+<!--                <a class="userLabel set-admin" href="#" role="button">提升为管理员</a>-->
+<!--              {{/if}}-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        {{else}}-->
+<!--          暂无用户-->
+<!--        {{/each}}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</template>-->

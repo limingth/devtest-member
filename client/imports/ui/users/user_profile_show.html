@@ -1,0 +1,61 @@
+<template name="userProfileShow">
+  <div class="container">
+
+    <div class="row user-edit">
+      <h4><b>个人信息</b></h4>
+          <ul class="sActList" style="padding-left: 0px;">
+              <li>
+                  <span class="sActListIcon glyphicon glyphicon-font"></span>
+                  <span>姓名：</span>
+                  <span>{{profile.name}}</span>
+              </li>
+              <li>
+                  <!-- <img src="/icons/seat@2x.png" class="sActListIcon"> -->
+                  <span class="sActListIcon glyphicon glyphicon-user"></span>
+                  <span>性别：</span>
+                  <span>{{profile.gender}}</span>
+              </li>
+              <li>
+                  <span class="sActListIcon glyphicon glyphicon-lock"></span>
+                  <span>公司：</span>
+                  <span>{{profile.company}}</span>
+              </li>
+              <li>
+                  <span class="sActListIcon glyphicon glyphicon-knight"></span>
+                  <span>职位：</span>
+                  <span>{{profile.positions}}</span>
+              </li>
+              <li>
+                  <!-- <img src="/icons/ticket@2x.png" class="sActListIcon"> -->
+                  <span class="sActListIcon glyphicon glyphicon-calendar"></span>
+                  <span>生日：</span>
+                  <span>{{formatdatetime profile.birthday}}</span>
+              </li>
+              <li>
+                  <!-- <img src="/icons/map@2x.png" class="sActListIcon"> -->
+                  <span class="sActListIcon glyphicon glyphicon-phone-alt"></span>
+                  <span>联系方式：</span>
+                  <span>{{profile.cellNumber}}</span>
+              </li>
+              <li>
+                  <!-- <img src="/icons/map@2x.png" class="sActListIcon"> -->
+                  <span class="sActListIcon glyphicon glyphicon-envelope "></span>
+                  <span>邮箱地址：</span>
+                  <span>{{profile.email}}</span>
+              </li>
+              <li style='height:150px;padding-top:25px'>
+                <span class="sActListIcon glyphicon glyphicon-picture "></span>
+                <span><img src="{{file.url}}" style="width:100px;height:100px" /></span>
+              </li>
+              <li style="padding-left: 10px; display: none;">
+              <!-- <li style="padding-left: 10px; visibility:hidden;"> -->
+              <!-- <li style="padding-left: 10px;"> -->
+                  <a class="btn btn-sm btn-default" href="{{pathFor 'activitiesIndex'}}" role="button">返回</a>
+                  <a class="btn btn-sm btn-default" href="{{pathFor 'activityEdit'}}" role="button" style="margin-right: 10px; margin-left: 10px;">编辑</a>
+                  <a class="btn btn-sm btn-danger delete-activitie" href="#" role="button">删除</a>
+              </li>
+          </ul>
+          <a class="btn btn-default" role="button" href="/profile">返回</a>
+    </div>
+  </div>
+</template>
